@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 document.getElementById("menu-toggle").addEventListener("click", function() {
     var sidebar = document.getElementById("sidebar");
     
@@ -9,7 +9,6 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
     }
 });
 
-=======
 document.getElementById("menu-toggle").addEventListener("click", function() {
     var sidebar = document.getElementById("sidebar");
     
@@ -20,4 +19,4 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
     }
 });
 
->>>>>>> 235cb2abc34399e649087d66ed4418c52a7dedc1
+

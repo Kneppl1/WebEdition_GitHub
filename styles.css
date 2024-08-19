@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -98,7 +98,6 @@ main {
     box-shadow: inset 5px 0 0 #000000; /* Schwarzer Balken auf der linken Seite */
     border-radius: 4px; /* Runde Ecken für ein weicheres Aussehen */
     padding-left: 40px; /* Text nach rechts verschieben, wenn gehighlightet */}
-=======
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -202,4 +201,3 @@ main {
         box-shadow: inset 5px 0 0 #ffffff; /* Ein weißer Balken auf der linken Seite */
         border-radius: 4px; /* Runde Ecken für ein weicheres Aussehen */
         padding-left: 40px; /* Text nach rechts verschieben, wenn gehighlightet */}
->>>>>>> 235cb2abc34399e649087d66ed4418c52a7dedc1
