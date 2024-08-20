@@ -8,3 +8,16 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
     }
 });
 
+// Toggle für Einstellungen-Dropdown
+document.querySelector('.settings-toggle').addEventListener('click', function() {
+    document.querySelector('.settings-dropdown').classList.toggle('open');
+});
+
+// Toggle für Dark Mode
+document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('.sidebar').classList.toggle('dark-mode');
+    document.querySelectorAll('.sidebar ul li a').forEach(function(link) {
+        link.classList.toggle('dark-mode');
+    });
+});

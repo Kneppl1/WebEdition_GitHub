@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #343a40;
+    background-color: #ffffff;
     color: white;
     padding: 1rem;
     position: fixed;
@@ -16,10 +16,21 @@ header {
     z-index: 1000;
 }
 
+.menu-bar {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 30px; /* Genauso breit wie der Abstand des Buttons */
+    height: 42px; /* Gleiche Höhe wie der Button */
+    background-color: #0000ff;
+    border-bottom: 1px solid #000000;
+    z-index: 1000; /* Unter dem Menü-Button */
+}
+
 .menu-toggle {
     position: fixed;
     top: 10px;
-    left: 10px;
+    left: 30px;
     background-color: #ffffff; /* Weiß für den Menü-Button */
     color: #000000; /* Schwarz für die Schrift */
     padding: 10px;
@@ -29,14 +40,24 @@ header {
 
 }
 
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9px;
+    background: linear-gradient(to right, #0000ff 33%, #008000 33%, #008000 66%, #ff0000 66%); /* Farbverlauf: Blau, Grün, Rot */
+    border-bottom: 1px solid #000000;
+    z-index: 999; /* Unter dem Menü-Button und dem Menü */}
+
 .sidebar {
     background-color: #f8f9fa; /* Sehr helles Grau für den Hintergrund des Menüs */
     color: #000000; /* Schwarz für die Schrift */
     width: 250px;
     position: fixed;
-    top: 0;
+    top: 10px;
     left: -250px;
-    height: 100%;
+    height: calc(100% - 10px);
     padding-top: 60px;
     transition: left 0.3s;
     z-index: 999;
@@ -97,3 +118,45 @@ main {
     box-shadow: inset 5px 0 0 #000000; /* Schwarzer Balken auf der linken Seite */
     border-radius: 4px; /* Runde Ecken für ein weicheres Aussehen */
     padding-left: 40px; /* Text nach rechts verschieben, wenn gehighlightet */}
+
+    .settings-dropdown {
+        display: none;
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    /* Dropdown-Liste sichtbar, wenn geöffnet */
+    .settings-dropdown.open {
+        display: block;
+    }
+    
+    /* Styling für die Dropdown-Optionen */
+    .settings-dropdown li a {
+        padding: 10px 50px; /* Einrückung nach rechts */
+        background-color: #f1f1f1; /* Helleres Grau für die Hintergrundfarbe */
+        color: #000000; /* Schwarz für die Schrift */
+        display: block;
+    }
+    
+    .settings-dropdown li a:hover {
+        background-color: #e9ecef; /* Helles Grau für den Hover-Effekt */
+    }
+    
+    /* Dark Mode Styles */
+    body.dark-mode {
+        background-color: #121212; /* Dunkler Hintergrund */
+        color: #ffffff; /* Weiße Schrift */
+    }
+    
+    .sidebar.dark-mode {
+        background-color: #333333; /* Dunkleres Grau für das Menü */
+    }
+    
+    .sidebar ul li a.dark-mode {
+        color: #ffffff; /* Weiße Schrift für Menülinks */
+    }
+    
+    .sidebar ul li a.dark-mode:hover {
+        background-color: #444444; /* Dunklerer Hover-Effekt */
+        color: #ffffff; /* Weiße Schrift im Hover-Effekt */
+    }

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -10,6 +9,10 @@
 </head>
 <body>
     <header>
+        <div class="top-bar"></div>
+
+        <div class="menu-bar"></div>
+
         <div class="menu-toggle" id="menu-toggle">
             ☰ Menü
         </div>
@@ -26,8 +29,13 @@
                 <li><a href="#security">Sicherheitsrichtlinien</a></li>
                 <li><a href="#culture">Unternehmenskultur</a></li>
                 <li><a href="#support">IT-Support</a></li>
-                <li><a href="#settings">Einstellungen</a></li> <!-- Neuer Menüpunkt -->
+            
+                <li>
+                    <a href="#" class="settings-toggle">Einstellungen</a>
+                    <ul class="settings-dropdown">
+                        <li><a href="#" id="dark-mode-toggle">Dark Mode umschalten</a></li>
                 </ul>
+                
             </ul>
         </nav>
     </header>
