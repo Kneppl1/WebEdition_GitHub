@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 200px;">Training & Schooling</h1>
+    </header>
+
+    <main style="margin-top: 50px;">
+        <div class="content" id="home">
+            <h1>Welcome to Our Training Platform</h1>
+            <p>Explore our wide range of courses and resources designed to help you grow and succeed.</p>
+        </div>
+
+        <div class="content" id="courses">
+            <h2>Our Courses</h2>
+
+            <div class="course-container">
+                <!-- First Course -->
+                <div class="course" id="course1">
+                    <h3>Weiterbildung 1</h3>
+                    <img src="https://www.jumo.de/media/pictures/career/pictures/Seminarszene_1.jpg" alt="Course 1 Image">
+                    <a onclick="toggleDetails('course1-details')">Weitere Infos</a>
+                    <div class="course-details" id="course1-details">
+                        <p>Beschreibung</p>
+                    </div>
+                </div>
+
+                <!-- Second Course -->
+                <div class="course" id="course2">
+                    <h3>Weiterbildung 2</h3>
+                    <img src="https://www.jumo.de/media/pictures/career/pictures/Seminarszene_1.jpg" alt="Course 2 Image">
+                    <a onclick="toggleDetails('course2-details')">Weitere Infos</a>
+                    <div class="course-details" id="course2-details">
+                        <p>Beschreibung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="trainers">
+            <h2>Meet Our Trainers</h2>
+            <p>Our experienced trainers are here to guide you through your learning journey.</p>
+        </div>
+
+        <div class="content" id="resources">
+            <h2>Learning Resources</h2>
+            <p>Access a variety of resources to enhance your learning experience.</p>
+        </div>
+    </main>
+</body>
+</html>
