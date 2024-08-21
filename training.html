@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <header style="background-color: #242427;
+                   color: white;
+                   padding: 1rem;
+                   position: fixed;
+                   top: 0;
+                   left: 0;
+                   width: 100%;
+                   z-index: 1000;" >
+
+                   <h1 style="margin-left: 270px;">Training & Schooling</h1>
+    </header>
+
+    <main>
+        <div class="content" id="home2" style="margin-top: 100px;">
+            <h1>Welcome to Our Training Platform</h1>
+            <p>Explore our wide range of courses and resources designed to help you grow and succeed.</p>
+        </div>
+
+        <div class="content" id="courses">
+            <h2>Our Courses</h2>
+
+            <div class="course-container">
+                <!-- First Course -->
+                <div class="course" id="course1">
+                    <h3>Course 1</h3>
+                    <img src="https://images.unsplash.com/45/QDSMoAMTYaZoXpcwBjsL__DSC0104-1.jpg?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course 1 Image">
+                    <a onclick="toggleDetails('course1-details')">Learn More</a>
+                    <div class="course-details" id="course1-details">
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <!-- Second Course -->
+                <div class="course" id="course2">
+                    <h3>Course 2</h3>
+                    <img src="https://images.unsplash.com/photo-1414690165279-49ab0a9a7e66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course 2 Image">
+                    <a onclick="toggleDetails('course2-details')">Learn More</a>
+                    <div class="course-details" id="course2-details">
+                        <p>Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="trainers">
+            <h2>Meet Our Trainers</h2>
+            <p>Our experienced trainers are here to guide you through your learning journey.</p>
+        </div>
+
+        <div class="content" id="resources">
+            <h2>Learning Resources</h2>
+            <p>Access a variety of resources to enhance your learning experience.</p>
+        </div>
+    </main>
+    <script>
+        function toggleDetails(detailsId) {
+            // Get all course details elements and course containers
+            const allDetails = document.querySelectorAll('.course-details');
+            const allCourses = document.querySelectorAll('.course');
+
+            // Iterate through all courses to collapse any expanded ones
+            allCourses.forEach((course) => {
+                const details = course.querySelector('.course-details');
+                if (details.id !== detailsId) {
+                    details.style.display = 'none';
+                    course.style.height = 'auto'; // Reset the height of other courses
+                }
+            });
+
+            // Get the clicked course details and parent container
+            const clickedDetails = document.getElementById(detailsId);
+            const course = clickedDetails.parentElement;
+
+            // Toggle the clicked course details
+            if (clickedDetails.style.display === 'block') {
+                clickedDetails.style.display = 'none';
+                course.style.height = 'auto'; // Reset height
+            } else {
+                clickedDetails.style.display = 'block';
+                course.style.height = 'auto'; // Let it expand naturally
+            }
+        }
+    </script>
+</body>
+</html>
