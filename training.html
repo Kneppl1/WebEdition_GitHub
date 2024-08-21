@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-    <header>
-        <header style="background-color: #242427;
-                   color: white;
-                   padding: 1rem;
-                   position: fixed;
-                   top: 0;
-                   left: 0;
-                   width: 100%;
-                   z-index: 1000;" >
-
-                   <h1 style="margin-left: 270px;">Training & Schooling</h1>
+    <header style="background-color: #333333; /* Hintergrundfarbe des Headers */
+    color: rgb(235, 231, 231);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;">
+        <h1 style="margin-left: 200px;">Training & Schooling</h1>
     </header>
 
     <main>
@@ -36,7 +37,7 @@
                     <img src="https://images.unsplash.com/45/QDSMoAMTYaZoXpcwBjsL__DSC0104-1.jpg?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course 1 Image">
                     <a onclick="toggleDetails('course1-details')">Learn More</a>
                     <div class="course-details" id="course1-details">
-                        <p>Description</p>
+                        <p>Description for Course 1</p>
                     </div>
                 </div>
 
@@ -46,7 +47,7 @@
                     <img src="https://images.unsplash.com/photo-1414690165279-49ab0a9a7e66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course 2 Image">
                     <a onclick="toggleDetails('course2-details')">Learn More</a>
                     <div class="course-details" id="course2-details">
-                        <p>Description</p>
+                        <p>Description for Course 2</p>
                     </div>
                 </div>
             </div>
@@ -62,32 +63,29 @@
             <p>Access a variety of resources to enhance your learning experience.</p>
         </div>
     </main>
+
     <script>
         function toggleDetails(detailsId) {
-            // Get all course details elements and course containers
-            const allDetails = document.querySelectorAll('.course-details');
+            const details = document.getElementById(detailsId);
+            const course = details.parentElement;
             const allCourses = document.querySelectorAll('.course');
 
-            // Iterate through all courses to collapse any expanded ones
-            allCourses.forEach((course) => {
-                const details = course.querySelector('.course-details');
-                if (details.id !== detailsId) {
-                    details.style.display = 'none';
-                    course.style.height = 'auto'; // Reset the height of other courses
+            // Close all courses except the one clicked
+            allCourses.forEach((item) => {
+                const itemDetails = item.querySelector('.course-details');
+                if (itemDetails !== details) {
+                    itemDetails.style.display = 'none';
+                    item.style.height = 'auto';
                 }
             });
 
-            // Get the clicked course details and parent container
-            const clickedDetails = document.getElementById(detailsId);
-            const course = clickedDetails.parentElement;
-
             // Toggle the clicked course details
-            if (clickedDetails.style.display === 'block') {
-                clickedDetails.style.display = 'none';
-                course.style.height = 'auto'; // Reset height
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                course.style.height = 'auto';
             } else {
-                clickedDetails.style.display = 'block';
-                course.style.height = 'auto'; // Let it expand naturally
+                details.style.display = 'block';
+                course.style.height = `${course.scrollHeight + details.scrollHeight}px`;
             }
         }
     </script>
