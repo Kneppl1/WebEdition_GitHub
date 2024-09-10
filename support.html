@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Ticket System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" id="menu-toggle">
+            ☰ Menü
+        </div>
+
+        <h1>Support Ticket System</h1>
+
+        <nav id="sidebar" class="sidebar">
+            <ul>
+                <li><a href="Intranet Startseite.html">Startseite</a></li>
+                <li><a href="news.html">Aktuelles</a></li>
+                <li><a href="mitarbeiterverzeichnis.html">Mitarbeiterverzeichnis</a></li>
+                <li><a href="dokumente.html">Dokumente</a></li>
+                <li><a href="communication.html">Kommunikation</a></li>
+                <li><a href="projekte.html">Projekte</a></li>
+                <li><a href="training.html">Schulungen</a></li>
+                <li><a href="selfservice.html">Self-Service</a></li>
+                <li><a href="culture.html">Unternehmenskultur</a></li>
+                <li><a href="support.html">IT-Support</a></li>
+                <li>
+                    <a href="#" class="settings-toggle">Einstellungen</a>
+                    <ul class="settings-dropdown">
+                        <li><a href="#" id="dark-mode-toggle">Dark Mode umschalten</a></li>
+                        <li><a href="sicherheit.html">Sicherheit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="ticket-form">
+            <h2>Submit a Support Ticket</h2>
+            <form action="/submit-ticket" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit Ticket</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+   
+    <script>
+        // Menü-Funktionalität
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
