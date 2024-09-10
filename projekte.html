@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektmanagement</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projekte.css">
+</head>
+<body>
+   
+        <header style="background-color: #333333; color: #ebebeb; padding: 1rem; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;">
+            <div class="menu-toggle" id="menu-toggle">☰ Menü</div>
+            <h1 style="margin-left: 200px;">Projektmanagment</h1>
+            <nav id="sidebar" class="sidebar">
+                <ul>
+                    <li><a href="Intranet Startseite.html">Startseite</a></li>
+                    <li><a href="news.html">Aktuelles</a></li>
+                    <li><a href="mitarbeiterverzeichnis.html">Mitarbeiterverzeichnis</a></li>
+                    <li><a href="dokumente.html">Dokumente</a></li>
+                    <li><a href="kommunikation.html">Kommunikation</a></li>
+                    <li><a href="projekte.html">Projekte</a></li>
+                    <li><a href="training.html">Schulungen</a></li>
+                    <li><a href="selfservice.html">Self-Service</a></li>
+                    <li><a href="unternehmenskultur.html">Unternehmenskultur</a></li>
+                    <li><a href="support.html">IT-Support</a></li>
+    
+                    <li>
+                        <a href="#" class="settings-toggle">Einstellungen</a>
+                        <ul class="settings-dropdown">
+                            <li><a href="#" id="dark-mode-toggle">Dark Mode umschalten</a></li>
+                            <li><a href="sicherheit.html">Sicherheit</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </header>
+
+   
+
+    <main>
+        <section class="projects-overview">
+            <h2>Übersicht der aktuellen Projekte</h2>
+            <p>Hier finden Sie Informationen zu laufenden und abgeschlossenen Projekten.</p>
+            
+            <!-- Beispiel für ein Projekt -->
+            <div class="project-item">
+                <h3>Projekt A</h3>
+                <p>Status: Laufend</p>
+                <p>Projektbeschreibung: Dieses Projekt beschäftigt sich mit der Optimierung der internen Abläufe.</p>
+                <button onclick="showDetails('project-a-details')">Mehr erfahren</button>
+                <div id="project-a-details" class="project-details">
+                    <p>Startdatum: Januar 2024</p>
+                    <p>Team: Max Mustermann, Julia Müller, Hans Schmidt</p>
+                    <p>Weitere Informationen zum Projekt ...</p>
+                </div>
+            </div>
+
+            <!-- Weiteres Projekt -->
+            <div class="project-item">
+                <h3>Projekt B</h3>
+                <p>Status: Abgeschlossen</p>
+                <p>Projektbeschreibung: Dieses Projekt befasste sich mit der Implementierung neuer Software.</p>
+                <button onclick="showDetails('project-b-details')">Mehr erfahren</button>
+                <div id="project-b-details" class="project-details">
+                    <p>Startdatum: Mai 2023</p>
+                    <p>Team: Sarah Meier, Lisa Koch, David Schwarz</p>
+                    <p>Weitere Informationen zum Projekt ...</p>
+                </div>
+            </div>
+
+            <!-- Weitere Projekte können hier hinzugefügt werden -->
+        </section>
+    </main>
+
+
+        <script src="script.js"></script>
+    <script>
+        // Menü-Funktionalität
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+   
+        function showDetails(id) {
+            const details = document.getElementById(id);
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                details.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
